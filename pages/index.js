@@ -35,7 +35,7 @@ export default function Home() {
         <div>
           <Grid container spacing={3} justify="center">
             {routes.map((route, index) => (
-              <Grid item md={3} xs={10}>
+              <Grid item md={4} xs={10}>
                 <Button
                   variant="outlined"
                   size="small"
