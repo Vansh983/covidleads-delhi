@@ -9,8 +9,8 @@ export default function bed(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Beds | Covid Leads Delhi</title>
+        <link rel="icon" href="/icon.png" />
       </Head>
       <div className={styles.container}>
         {/*<Cards data={data} />*/}
