@@ -142,7 +142,7 @@ function MenuBar(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
 
-        <Component beds={props.beds} />
+        <Component beds={props.beds} category={props.category} />
       </main>
     </div>
   );

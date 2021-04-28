@@ -49,7 +49,7 @@ const useStyles = makeStyles({
   },
 });
 
-function BedCard({ bed }) {
+function BedCard({ bed, category }) {
   const [name, location, phoneNumber, lastVerified] = bed;
   const classes = useStyles();
   const router = useRouter();
@@ -71,7 +71,7 @@ function BedCard({ bed }) {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <h5 className={classes.title}>Beds</h5>
+        <h5 className={classes.title}>{category}</h5>
         <h2 className={classes.head}>{name}</h2>
         <Typography className={classes.pos} color="primary">
           <DoneAllIcon /> Verified at {lastVerified}
