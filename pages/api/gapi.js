@@ -1,6 +1,7 @@
+import { getServerSideProps } from 'next'
 const { google } = require("googleapis");
 
-export const googleApi = async () => {
+export default function getServerSideProps() {
   const auth = new google.auth.GoogleAuth({
     keyFile: "credentials.json",
     scopes: "https://www.googleapis.com/auth/spreadsheets",
@@ -14,13 +15,12 @@ export const googleApi = async () => {
   });
 
   //Read Rows
-  const getRows = await googleSheets.spreadsheets.values.get({
-    auth,
-    spreadsheetId,
-    range: "Beds",
-  });
+    const getRows = await googleSheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Beds",
+    });
   let beds = JSON.stringify(getRows.data);
   console.log(beds);
-  console.log("Port 5000");
-  return beds;
+  return {props: {beds}};
 };

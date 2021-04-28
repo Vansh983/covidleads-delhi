@@ -62,7 +62,7 @@ function MenuBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  console.log(props.beds);
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -155,7 +155,7 @@ function MenuBar(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
 
-        <Component />
+        <Component beds={props.beds} />
       </main>
     </div>
   );
