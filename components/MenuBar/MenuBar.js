@@ -105,7 +105,7 @@ function MenuBar(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -117,7 +117,7 @@ function MenuBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Covid Leads Delhi
           </Typography>
         </Toolbar>
       </AppBar>

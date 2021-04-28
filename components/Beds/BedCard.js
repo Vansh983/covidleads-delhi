@@ -20,10 +20,22 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontSize: 15,
+    fontWeight: "400",
+    marginTop: "3px",
+    marginBottom: "0px",
   },
   pos: {
     marginBottom: 12,
+    fontSize: 16,
+  },
+  head: {
+    margin: "5px 0px",
+    fontSize: 24,
+  },
+  p: {
+    fontSize: 15,
+    margin: 0,
   },
 });
 
@@ -49,26 +61,21 @@ function BedCard({ bed }) {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Beds
-        </Typography>
-        <Typography variant="h5" component="h2">
-          {name}
-        </Typography>
+        <h5 className={classes.title}>Beds</h5>
+        <h2 className={classes.head}>{name}</h2>
         <Typography className={classes.pos} color="primary">
-          <DoneAllIcon /> Verified
+          <DoneAllIcon /> Verified at {lastVerified}
         </Typography>
-        <Typography variant="body2" component="p">
-          {location}
-        </Typography>
+        <p className={classes.p}>{location}</p>
       </CardContent>
       <CardActions>
         <Button
-          style={{ padding: "10px 0px" }}
+          style={{
+            padding: "10px 0px",
+            fontFamily: "Poppins",
+            fontWeight: "800",
+            fontSize: 15,
+          }}
           onClick={handleCall}
           size="large"
           fullWidth
@@ -80,11 +87,17 @@ function BedCard({ bed }) {
         </Button>
         <Button
           onClick={handleMsg}
-          style={{ padding: "10px 0px" }}
+          style={{
+            padding: "10px 0px",
+            backgroundColor: "#00c300",
+            color: "#fff",
+            fontFamily: "Poppins",
+            fontWeight: "800",
+            fontSize: 15,
+          }}
           size="large"
           fullWidth
           variant="contained"
-          color="secondary"
         >
           <WhatsAppIcon />
           Whatsapp
