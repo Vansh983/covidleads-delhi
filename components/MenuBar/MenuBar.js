@@ -67,7 +67,7 @@ function MenuBar(props) {
     <div>
       <Link href="/">
         <h2 style={{ margin: "20px 15px", color: "#007EFF" }}>
-          Covid Leads Delhi
+          Covid Leads for Delhi
         </h2>
       </Link>
       <Divider />

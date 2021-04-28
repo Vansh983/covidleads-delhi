@@ -7,13 +7,31 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Covid Leads Delhi</title>
+        <title>Covid Leads for Delhi</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={styles.container} style={{ textAlign: "center" }}>
-        <h1 style={{ color: "#007eff", lineHeight: "40px", fontSize: "35px" }}>
-          Covid Resources Delhi
+        <h1
+          style={{
+            color: "#007eff",
+            lineHeight: "40px",
+            fontSize: "35px",
+            marginBottom: 0,
+          }}
+        >
+          Covid Leads, Delhi
         </h1>
+        <Grid item md={6} xs={12}>
+          <p style={{ color: "#007eff" }}>
+            This website provides reliable and trusted resources for the people
+            in need of beds, medicines, oxygen cylinders and food services. All
+            the leads provided on this website are personally verified and not
+            just scraped off public sources and are also updated regularly. In
+            these uncertain times, this is the least we can do on our part to
+            help the people who are struggling to accumulate resources to save
+            their loved ones.
+          </p>
+        </Grid>
         <div>
           <Grid container spacing={3} justify="center">
             {routes.map((route, index) => (

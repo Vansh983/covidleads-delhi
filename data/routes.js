@@ -13,10 +13,7 @@ const routes = [
     name: "Food Services",
     route: "/food",
   },
-  {
-    name: "Consultants",
-    route: "/consultants",
-  },
+
   {
     name: "Oxygen Cylinders and Concentrators",
     route: "/cylinders",

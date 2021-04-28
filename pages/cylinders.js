@@ -9,7 +9,7 @@ export default function bed(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Cylinders and Concentrators | Covid Leads Delhi</title>
+        <title>Cylinders and Concentrators | Covid Leads for Delhi</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={styles.container}>

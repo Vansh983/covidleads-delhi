@@ -9,7 +9,7 @@ export default function food(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Food Services | Covid Leads Delhi</title>
+        <title>Food Services | Covid Leads for Delhi</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={styles.container}>
