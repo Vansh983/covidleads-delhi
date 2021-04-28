@@ -1,13 +1,14 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import DoneAllIcon from "@material-ui/icons/DoneAll";
 import CallIcon from "@material-ui/icons/Call";
-import PropTypes from "prop-types";
+import DoneAllIcon from "@material-ui/icons/DoneAll";
+import React from "react";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles({
   root: {
@@ -26,9 +27,24 @@ const useStyles = makeStyles({
   },
 });
 
-const BedCard = (props) => {
+function BedCard({ bed }) {
+  const [name, location, phoneNumber, lastVerified] = bed;
   const classes = useStyles();
-  console.log(props);
+  const router = useRouter();
+  const handleMsg = () => {
+    let msg =
+      "Hello. I am looking for " +
+      name +
+      " in Delhi on an urgent basis. Please let me know if it is available with you. Thank you.";
+    let URL = "whatsapp://send?text=" + msg + "&phone=91" + phoneNumber;
+
+    router.push(URL);
+  };
+  const handleCall = () => {
+    let URL = "tel:" + phoneNumber;
+
+    router.push(URL);
+  };
 
   return (
     <Card className={classes.root}>
@@ -41,23 +57,41 @@ const BedCard = (props) => {
           Beds
         </Typography>
         <Typography variant="h5" component="h2">
-          Ventilator Beds
+          {name}
         </Typography>
         <Typography className={classes.pos} color="primary">
           <DoneAllIcon /> Verified
         </Typography>
         <Typography variant="body2" component="p">
-          Max Hospital, Punjabi Bagh, 110029
+          {location}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="large" fullWidth variant="contained" color="primary">
+        <Button
+          style={{ padding: "10px 0px" }}
+          onClick={handleCall}
+          size="large"
+          fullWidth
+          variant="contained"
+          color="primary"
+        >
           <CallIcon />
-          Call Now
+          Call
+        </Button>
+        <Button
+          onClick={handleMsg}
+          style={{ padding: "10px 0px" }}
+          size="large"
+          fullWidth
+          variant="contained"
+          color="secondary"
+        >
+          <WhatsAppIcon />
+          Whatsapp
         </Button>
       </CardActions>
     </Card>
   );
-};
+}
 
 export default BedCard;
