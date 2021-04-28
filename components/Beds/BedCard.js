@@ -13,6 +13,8 @@ import { useRouter } from "next/router";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    boxShadow: "0px 0px 20px 2px #e4e4e48f",
+    paddingBottom: 5,
   },
   bullet: {
     display: "inline-block",
@@ -24,6 +26,14 @@ const useStyles = makeStyles({
     fontWeight: "400",
     marginTop: "3px",
     marginBottom: "0px",
+  },
+  butt: {
+    boxShadow: "0px 0px 20px 2px #e4e4e48f",
+    color: "#fff",
+    fontFamily: "Poppins",
+    fontWeight: "800",
+    fontSize: 15,
+    padding: "10px 0px",
   },
   pos: {
     marginBottom: 12,
@@ -70,15 +80,10 @@ function BedCard({ bed }) {
       </CardContent>
       <CardActions>
         <Button
-          style={{
-            padding: "10px 0px",
-            fontFamily: "Poppins",
-            fontWeight: "800",
-            fontSize: 15,
-          }}
           onClick={handleCall}
           size="large"
           fullWidth
+          className={classes.butt}
           variant="contained"
           color="primary"
         >
@@ -88,13 +93,10 @@ function BedCard({ bed }) {
         <Button
           onClick={handleMsg}
           style={{
-            padding: "10px 0px",
             backgroundColor: "#00c300",
             color: "#fff",
-            fontFamily: "Poppins",
-            fontWeight: "800",
-            fontSize: 15,
           }}
+          className={classes.butt}
           size="large"
           fullWidth
           variant="contained"

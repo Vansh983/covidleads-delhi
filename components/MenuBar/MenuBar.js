@@ -21,6 +21,7 @@ import { Grid } from "@material-ui/core";
 import Cards from "../Cards/Cards";
 import Beds from "../Beds/Beds";
 import Link from "next/link";
+import routes from "../../data/routes";
 
 const drawerWidth = 240;
 
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
+    boxShadow: "0px 0px 20px 2px #e4e4e48f",
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
@@ -66,36 +68,23 @@ function MenuBar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  console.log(routes);
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
+      <Link href="/">
+        <h2 style={{ margin: "20px 15px", color: "#007EFF" }}>
+          Covid Leads Delhi
+        </h2>
+      </Link>
       <Divider />
-      <List>
-        <Link href="/beds">
-          <ListItem button>
-            <ListItemIcon></ListItemIcon>
-            <ListItemText primary="Beds" />
-          </ListItem>
+      {routes.map((route, index) => (
+        <Link href={route.route}>
+          <div>
+            <h3 style={{ margin: "20px 15px" }}>{route.name}</h3>
+            <Divider />
+          </div>
         </Link>
-        <Link href="/stats">
-          <ListItem button>
-            <ListItemIcon></ListItemIcon>
-            <ListItemText primary="Stats" />
-          </ListItem>
-        </Link>
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      ))}
     </div>
   );
 
@@ -105,7 +94,7 @@ function MenuBar(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
+      <AppBar position="fixed" color="none" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -116,9 +105,7 @@ function MenuBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Covid Leads Delhi
-          </Typography>
+          <h2>{props.category} in Delhi</h2>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

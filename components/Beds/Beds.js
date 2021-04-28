@@ -6,10 +6,6 @@ import BedCard from "./BedCard";
 function Beds({ beds }) {
   return (
     <div>
-      <Typography variant="h4" component="h4" style={{ textAlign: "center" }}>
-        Beds In Delhi
-      </Typography>
-      <br />
       <Grid container spacing={5} justify="center">
         {beds.map((bed, index) => (
           <Grid item md={6}>
