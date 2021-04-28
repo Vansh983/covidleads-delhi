@@ -5,6 +5,9 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import DoneAllIcon from "@material-ui/icons/DoneAll";
+import CallIcon from "@material-ui/icons/Call";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles({
   root: {
@@ -23,9 +26,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ItemCard() {
+const BedCard = (props) => {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  console.log(props);
 
   return (
     <Card className={classes.root}>
@@ -35,23 +38,26 @@ export default function ItemCard() {
           color="textSecondary"
           gutterBottom
         >
-          Word of the Day
+          Beds
         </Typography>
         <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
+          Ventilator Beds
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
+        <Typography className={classes.pos} color="primary">
+          <DoneAllIcon /> Verified
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          Max Hospital, Punjabi Bagh, 110029
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="large" fullWidth variant="contained" color="primary">
+          <CallIcon />
+          Call Now
+        </Button>
       </CardActions>
     </Card>
   );
-}
+};
+
+export default BedCard;

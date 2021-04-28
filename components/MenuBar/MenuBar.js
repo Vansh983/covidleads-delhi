@@ -16,7 +16,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import ItemCard from "../ItemCard/ItemCard";
+import ItemCard from "../Beds/BedCard";
+import { Grid } from "@material-ui/core";
+import Cards from "../Cards/Cards";
+import Beds from "../Beds/Beds";
+import Link from "next/link";
 
 const drawerWidth = 240;
 
@@ -54,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function MenuBar(props) {
-  const { window } = props;
+  const { window, Component } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -68,14 +72,18 @@ function MenuBar(props) {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+        <Link href="/beds">
+          <ListItem button>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="Beds" />
           </ListItem>
-        ))}
+        </Link>
+        <Link href="/stats">
+          <ListItem button>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="Stats" />
+          </ListItem>
+        </Link>
       </List>
       <Divider />
       <List>
@@ -146,18 +154,11 @@ function MenuBar(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <ItemCard />
+
+        <Component />
       </main>
     </div>
   );
 }
-
-MenuBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
 
 export default MenuBar;
