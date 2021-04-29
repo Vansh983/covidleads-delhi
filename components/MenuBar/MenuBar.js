@@ -47,10 +47,6 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
 }));
 
 function MenuBar(props) {
@@ -72,7 +68,7 @@ function MenuBar(props) {
       </Link>
       <Divider />
       {routes.map((route, index) => (
-        <Link href={route.route}>
+        <Link href={route.route} style={{ cursor: "pointer" }}>
           <div>
             <h3 style={{ margin: "20px 15px" }}>{route.name}</h3>
             <Divider />

@@ -26,10 +26,7 @@ export default function Home() {
             This website provides reliable and trusted resources for the people
             in need of beds, medicines, oxygen cylinders and food services. All
             the leads provided on this website are personally verified and not
-            just scraped off public sources and are also updated regularly. In
-            these uncertain times, this is the least we can do on our part to
-            help the people who are struggling to accumulate resources to save
-            their loved ones.
+            just scraped off of public sources and are also updated regularly.
           </p>
         </Grid>
         <div>
