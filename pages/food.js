@@ -14,7 +14,11 @@ export default function food(props) {
       </Head>
       <div className={styles.container}>
         {/*<Cards data={data} />*/}
-        <MenuBar Component={Beds} beds={props.beds} category="Food Services" />
+        <MenuBar
+          Component={Beds}
+          beds={props.beds}
+          category="Food Services in Delhi"
+        />
       </div>
     </div>
   );

@@ -6,17 +6,19 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ItemCard from "../Beds/BedCard";
-import { Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import Cards from "../Cards/Cards";
 import Beds from "../Beds/Beds";
 import Link from "next/link";
 import routes from "../../data/routes";
 import BottomNav from "./BottomNav";
+import { useRouter } from "next/router";
 
 const drawerWidth = 300;
 
@@ -32,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     boxShadow: "0px 0px 20px 2px #e4e4e48f",
+    flexGrow: 1,
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
@@ -48,12 +51,16 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  hh: {
+    flexGrow: 1,
+  },
 }));
 
 function MenuBar(props) {
   const { window, Component } = props;
   const classes = useStyles();
   const theme = useTheme();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   console.log(props.beds);
   const handleDrawerToggle = () => {
@@ -96,7 +103,10 @@ function MenuBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <h2>{props.category}</h2>
+          <h2 className={classes.hh}>{props.category}</h2>
+          <Button onClick={() => router.push("/search")}>
+            <SearchIcon />
+          </Button>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

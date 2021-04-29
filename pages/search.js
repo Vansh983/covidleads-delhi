@@ -3,20 +3,21 @@ import styles from "../styles/Home.module.css";
 import { google } from "googleapis";
 import MenuBar from "../components/MenuBar/MenuBar";
 import Beds from "../components/Beds/Beds";
+import Search from "../components/Search/Search";
 // import GoogleSheetsProvider from "react-db-google-sheets";
 
-export default function bed(props) {
+export default function search(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Cylinders and Concentrators | Covid Leads for Delhi</title>
+        <title>Medicines | Covid Leads for Delhi</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={styles.container}>
         {/*<Cards data={data} />*/}
         <MenuBar
-          Component={Beds}
-          category="Cylinders and Concentrators in Delhi"
+          Component={Search}
+          category="Search all resources"
           beds={props.beds}
         />
       </div>
@@ -32,19 +33,48 @@ export async function getServerSideProps() {
   const client = await auth.getClient();
   const googleSheets = google.sheets({ version: "v4", auth: client });
   const spreadsheetId = "1ogVEfCdn72TQmxjc-3smkanOQKt1_nj8xpncoD7lqu0";
-  const metaData = await googleSheets.spreadsheets.get({
-    auth,
-    spreadsheetId,
-  });
 
   //Read Rows
-  const getRows = await googleSheets.spreadsheets.values.get({
+  const getBeds = await googleSheets.spreadsheets.values.get({
+    auth,
+    spreadsheetId,
+    range: "Beds",
+  });
+  const getMeds = await googleSheets.spreadsheets.values.get({
+    auth,
+    spreadsheetId,
+    range: "Medicines",
+  });
+  const getFood = await googleSheets.spreadsheets.values.get({
+    auth,
+    spreadsheetId,
+    range: "FoodServices",
+  });
+  const getCyl = await googleSheets.spreadsheets.values.get({
     auth,
     spreadsheetId,
     range: "OxygenCylindersConcentrators",
   });
-  let bedsinit = JSON.stringify(getRows.data.values);
+  let bedsinit = JSON.stringify(getBeds.data.values);
+  let medsinit = JSON.stringify(getMeds.data.values);
+  let cylinit = JSON.stringify(getCyl.data.values);
+  let foodinit = JSON.stringify(getFood.data.values);
+
   let beds = JSON.parse(bedsinit);
+  let meds = JSON.parse(medsinit);
+  let cyl = JSON.parse(cylinit);
+  let food = JSON.parse(foodinit);
+  let i = 1;
+  for (i = 1; i < meds.length; i++) {
+    beds.push(meds[i]);
+  }
+  for (i = 1; i < food.length; i++) {
+    beds.push(food[i]);
+  }
+  for (i = 1; i < cyl.length; i++) {
+    beds.push(cyl[i]);
+  }
+
   console.log(beds);
   beds = beds.slice(1);
 
