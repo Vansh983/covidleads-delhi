@@ -14,7 +14,7 @@ export default function bed(props) {
       </Head>
       <div className={styles.container}>
         {/*<Cards data={data} />*/}
-        <MenuBar Component={Beds} category="Beds" beds={props.beds} />
+        <MenuBar Component={Beds} category="Beds in Delhi" beds={props.beds} />
       </div>
     </div>
   );

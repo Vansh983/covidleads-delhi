@@ -41,7 +41,7 @@ const useStyles = makeStyles({
   },
   head: {
     margin: "5px 0px",
-    fontSize: 24,
+    fontSize: 20,
   },
   p: {
     fontSize: 15,
@@ -72,7 +72,10 @@ function BedCard({ bed, category }) {
     <Card className={classes.root}>
       <CardContent>
         <h5 className={classes.title}>{category}</h5>
-        <h2 className={classes.head}>{name}</h2>
+        <h2 className={classes.head}>
+          {name}
+          &nbsp;
+        </h2>
         <Typography className={classes.pos} color="primary">
           <DoneAllIcon /> Verified at {lastVerified}
         </Typography>

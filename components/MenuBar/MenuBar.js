@@ -16,6 +16,7 @@ import Cards from "../Cards/Cards";
 import Beds from "../Beds/Beds";
 import Link from "next/link";
 import routes from "../../data/routes";
+import BottomNav from "./BottomNav";
 
 const drawerWidth = 300;
 
@@ -95,7 +96,7 @@ function MenuBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <h2>{props.category} in Delhi</h2>
+          <h2>{props.category}</h2>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

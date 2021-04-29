@@ -5,10 +5,10 @@ import BedCard from "./BedCard";
 
 function Beds({ beds, category }) {
   return (
-    <div>
-      <Grid container spacing={5} justify="center">
+    <div style={{ marginTop: "20px" }}>
+      <Grid container spacing={2} justify="center">
         {beds.map((bed, index) => (
-          <Grid item md={6}>
+          <Grid item md={6} xs={10}>
             <BedCard key={index} category={category} bed={bed} />
           </Grid>
         ))}
