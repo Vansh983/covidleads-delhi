@@ -17,7 +17,7 @@ import Beds from "../Beds/Beds";
 import Link from "next/link";
 import routes from "../../data/routes";
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
   root: {
