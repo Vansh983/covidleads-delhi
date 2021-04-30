@@ -27,6 +27,10 @@ const routes = [
     route: "/consultants",
   },
   {
+    name: "Medical Equipment",
+    route: "/equipment",
+  },
+  {
     name: "Covid Stats",
     route: "/stats",
   },
