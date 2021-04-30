@@ -82,33 +82,35 @@ function BedCard({ bed, category }) {
         <p className={classes.p}>{location}</p>
         <p style={{ color: "#007ef3", margin: 0 }}>{timings}</p>
       </CardContent>
-      <CardActions>
-        <Button
-          onClick={handleCall}
-          size="large"
-          fullWidth
-          className={classes.butt}
-          variant="contained"
-          color="primary"
-        >
-          <CallIcon />
-          Call
-        </Button>
-        <Button
-          onClick={handleMsg}
-          style={{
-            backgroundColor: "#00c300",
-            color: "#fff",
-          }}
-          className={classes.butt}
-          size="large"
-          fullWidth
-          variant="contained"
-        >
-          <WhatsAppIcon />
-          Whatsapp
-        </Button>
-      </CardActions>
+      {phoneNumber && (
+        <CardActions>
+          <Button
+            onClick={handleCall}
+            size="large"
+            fullWidth
+            className={classes.butt}
+            variant="contained"
+            color="primary"
+          >
+            <CallIcon />
+            Call
+          </Button>
+          <Button
+            onClick={handleMsg}
+            style={{
+              backgroundColor: "#00c300",
+              color: "#fff",
+            }}
+            className={classes.butt}
+            size="large"
+            fullWidth
+            variant="contained"
+          >
+            <WhatsAppIcon />
+            Whatsapp
+          </Button>
+        </CardActions>
+      )}
     </Card>
   );
 }
