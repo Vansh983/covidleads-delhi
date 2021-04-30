@@ -47,6 +47,7 @@ export async function getServerSideProps() {
   let beds = JSON.parse(bedsinit);
   console.log(beds);
   beds = beds.slice(1);
+  beds.reverse();
 
   // var beds = bedsarr.reduce(function (acc, cur, i) {
   //   acc[i] = cur;
