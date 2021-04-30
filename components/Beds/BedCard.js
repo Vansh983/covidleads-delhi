@@ -50,7 +50,7 @@ const useStyles = makeStyles({
 });
 
 function BedCard({ bed, category }) {
-  const [name, location, phoneNumber, lastVerified] = bed;
+  const [name, location, phoneNumber, lastVerified, timings] = bed;
   const classes = useStyles();
   const router = useRouter();
   const handleMsg = () => {
@@ -80,6 +80,7 @@ function BedCard({ bed, category }) {
           <DoneAllIcon /> Verified at {lastVerified}
         </Typography>
         <p className={classes.p}>{location}</p>
+        <p style={{ color: "#007ef3", margin: 0 }}>{timings}</p>
       </CardContent>
       <CardActions>
         <Button

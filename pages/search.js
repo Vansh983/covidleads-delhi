@@ -55,14 +55,21 @@ export async function getServerSideProps() {
     spreadsheetId,
     range: "OxygenCylindersConcentrators",
   });
+  const getDocs = await googleSheets.spreadsheets.values.get({
+    auth,
+    spreadsheetId,
+    range: "Consultants",
+  });
   let bedsinit = JSON.stringify(getBeds.data.values);
   let medsinit = JSON.stringify(getMeds.data.values);
   let cylinit = JSON.stringify(getCyl.data.values);
+  let docsinit = JSON.stringify(getDocs.data.values);
   let foodinit = JSON.stringify(getFood.data.values);
 
   let beds = JSON.parse(bedsinit);
   let meds = JSON.parse(medsinit);
   let cyl = JSON.parse(cylinit);
+  let docs = JSON.parse(docsinit);
   let food = JSON.parse(foodinit);
   let i = 1;
   for (i = 1; i < meds.length; i++) {
@@ -73,6 +80,9 @@ export async function getServerSideProps() {
   }
   for (i = 1; i < cyl.length; i++) {
     beds.push(cyl[i]);
+  }
+  for (i = 1; i < docs.length; i++) {
+    beds.push(docs[i]);
   }
 
   console.log(beds);
