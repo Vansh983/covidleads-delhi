@@ -22,10 +22,10 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       styles: (
-        <>
+        <div>
           {initialProps.styles}
           {sheets.getStyleElement()}
-        </>
+        </div>
       ),
     };
   }
@@ -37,17 +37,16 @@ export default class MyDocument extends Document {
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=270874496`}
+            src={`https://www.googletagmanager.com/gtag/js?id=G-MDWE8ST7MT`}
           />
           <script
             dangerouslySetInnerHTML={{
               __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '270874496', {
-            page_path: window.location.pathname,
-          });
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-MDWE8ST7MT');
         `,
             }}
           />
