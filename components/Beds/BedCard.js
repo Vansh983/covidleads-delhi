@@ -81,6 +81,9 @@ function BedCard({ bed, category }) {
         </Typography>
         <p className={classes.p}>{location}</p>
         <p style={{ color: "#007ef3", margin: 0 }}>{timings}</p>
+        <p style={{ marginTop: 5, marginBottom: 0, color: "#007ef3" }}>
+          {phoneNumber}
+        </p>
       </CardContent>
       {phoneNumber && (
         <CardActions>
