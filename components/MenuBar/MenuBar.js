@@ -77,10 +77,10 @@ function MenuBar(props) {
       <Divider />
       {routes.map((route, index) => (
         <Link href={route.route} style={{ cursor: "pointer" }}>
-          <div>
+          <a>
             <h3 style={{ margin: "20px 15px" }}>{route.name}</h3>
             <Divider />
-          </div>
+          </a>
         </Link>
       ))}
     </div>
