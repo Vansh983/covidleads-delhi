@@ -69,11 +69,13 @@ function MenuBar(props) {
   console.log(routes);
   const drawer = (
     <div>
-      <Link href="/">
-        <h2 style={{ margin: "20px 15px", color: "#007EFF" }}>
-          Covid Leads for Delhi
-        </h2>
-      </Link>
+      <h2>
+        <Link href="/">
+          <a style={{ margin: "20px 15px", color: "#007EFF" }}>
+            Covid Leads for Delhi
+          </a>
+        </Link>
+      </h2>
       <Divider />
       {routes.map((route, index) => (
         <Link href={route.route} style={{ cursor: "pointer" }}>

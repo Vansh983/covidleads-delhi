@@ -9,6 +9,7 @@ import DoneAllIcon from "@material-ui/icons/DoneAll";
 import React from "react";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import { useRouter } from "next/router";
+import LanguageIcon from "@material-ui/icons/Language";
 
 const useStyles = makeStyles({
   root: {
@@ -50,7 +51,7 @@ const useStyles = makeStyles({
 });
 
 function BedCard({ bed, category }) {
-  const [name, location, phoneNumber, lastVerified, timings] = bed;
+  const [name, location, phoneNumber, lastVerified, timings, website] = bed;
   const classes = useStyles();
   const router = useRouter();
   const handleMsg = () => {
@@ -66,6 +67,9 @@ function BedCard({ bed, category }) {
     let URL = "tel:" + phoneNumber;
 
     router.push(URL);
+  };
+  const handleLink = () => {
+    router.push(website);
   };
 
   return (
@@ -111,6 +115,21 @@ function BedCard({ bed, category }) {
           >
             <WhatsAppIcon />
             Whatsapp
+          </Button>
+        </CardActions>
+      )}
+      {website && (
+        <CardActions style={{ paddingTop: 0 }}>
+          <Button
+            onClick={handleLink}
+            size="large"
+            fullWidth
+            className={classes.butt}
+            variant="contained"
+            color="primary"
+          >
+            <LanguageIcon />
+            Website
           </Button>
         </CardActions>
       )}
