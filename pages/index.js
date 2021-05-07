@@ -28,6 +28,10 @@ export default function Home() {
             the leads provided on this website are personally verified and not
             just scraped off of public sources and are also updated regularly.
           </p>
+          <p style={{ color: "red" }}>
+            Disclaimer: Verification of leads pertains to availability of
+            resources only. Do not pay in advance for any resource.
+          </p>
         </Grid>
         <div>
           <Grid container spacing={3} justify="center">
