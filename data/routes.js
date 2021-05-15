@@ -31,6 +31,10 @@ const routes = [
     route: "/plasma",
   },
   {
+    name: "RTPCR",
+    route: "/rtpcr",
+  },
+  {
     name: "Medical Equipment",
     route: "/equipment",
   },

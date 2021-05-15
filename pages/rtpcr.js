@@ -9,16 +9,12 @@ export default function bed(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Plasma | Covid Leads for Delhi</title>
+        <title>RTPCR | Covid Leads for Delhi</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={styles.container}>
         {/*<Cards data={data} />*/}
-        <MenuBar
-          Component={Beds}
-          category="Plasma in Delhi"
-          beds={props.beds}
-        />
+        <MenuBar Component={Beds} category="RTPCR in Delhi" beds={props.beds} />
       </div>
     </div>
   );
@@ -41,7 +37,7 @@ export async function getServerSideProps() {
   const getRows = await googleSheets.spreadsheets.values.get({
     auth,
     spreadsheetId,
-    range: "Plasma",
+    range: "RTPCR",
   });
   let bedsinit = JSON.stringify(getRows.data.values);
   let beds = JSON.parse(bedsinit);
