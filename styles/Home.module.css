@@ -114,6 +114,106 @@
   height: 1em;
 }
 
+.headImg {
+  background-image: url("/assets/ourmission_bg.png");
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing {
+  background-image: url("/assets/MAP.svg");
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.story {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.story p {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.mission {
+  width: 80%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: flex;
+}
+
+.mission .content {
+  width: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(500px);
+  position: relative;
+  z-index: 20;
+  align-items: center;
+  text-align: left;
+  height: max-content;
+  align-self: center;
+}
+
+.mission img {
+  width: 60%;
+  margin-left: -10%;
+}
+
+.mission p {
+  width: 90%;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  text-align: center;
+}
+
+.stats div h4 {
+  font-size: 45px;
+  color: #0070f3;
+  font-weight: 900;
+}
+
+.stats div p {
+  font-size: 22px;
+  color: #13171c;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.cards img {
+  width: 80%;
+}
+
+.story .ccc {
+  background-color: #0070f3;
+  color: #fff;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 10vh;
+  border-radius: 30px;
+  margin-bottom: 10vh;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
