@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import routes from "../data/routes";
 import { Button, Grid, Card } from "@material-ui/core";
 import Story from "../components/Landing/Story";
 import Mission from "../components/Landing/Mission";
@@ -43,26 +42,32 @@ export default function Home() {
       </div>
       <Story />
       <Mission />
-      <h1
+      <div
         style={{
           color: "#007eff",
           lineHeight: "40px",
-          fontSize: "45px",
+          fontSize: "40px",
           marginBottom: 0,
+          fontWeight: "bold",
         }}
+        className={styles.headImg}
       >
-        Our Founding <span style={{ color: "#000" }}>Team</span>
-      </h1>
-      {/*<Grid container spacing={3} justify="center" className={styles.cards}>
+        Founding <span style={{ color: "#000" }}>Members</span>
+      </div>
+      <Grid
+        container
+        spacing={3}
+        justifyContent="center"
+        className={styles.cards}
+      >
         {team.map((mem, index) => (
           <Grid item md={3} xs={10} key={mem.id}>
             <img src={mem.img} alt="" />
-            <h3>{mem.name}</h3>
-            <p>{mem.title}</p>
+            <h3 style={{ marginBottom: 0, fontSize: "24px" }}>{mem.name}</h3>
+            {/*<p style={{ marginTop: 10 }}>{mem.title}</p>*/}
           </Grid>
         ))}
-        </Grid> */}
-
+      </Grid>
       <Footer />
     </div>
   );

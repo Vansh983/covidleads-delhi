@@ -43,15 +43,15 @@ const Story = () => {
       <div className={styles.stats}>
         <div>
           <h4>10,000+</h4>
-          <p>Active Users</p>
+          <p style={{ textAlign: "center" }}>Active Users</p>
         </div>
         <div>
           <h4>1,200+</h4>
-          <p>Users</p>
+          <p style={{ textAlign: "center" }}>Users</p>
         </div>
         <div>
           <h4>50+</h4>
-          <p>Volunteers</p>
+          <p style={{ textAlign: "center" }}>Volunteers</p>
         </div>
       </div>
     </div>
