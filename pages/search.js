@@ -32,7 +32,7 @@ export async function getServerSideProps() {
   });
   const client = await auth.getClient();
   const googleSheets = google.sheets({ version: "v4", auth: client });
-  const spreadsheetId = "1ogVEfCdn72TQmxjc-3smkanOQKt1_nj8xpncoD7lqu0";
+  const spreadsheetId = process.env.NEXT_PUBLIC_SHEET_ID;
 
   //Read Rows
   const getBeds = await googleSheets.spreadsheets.values.get({
