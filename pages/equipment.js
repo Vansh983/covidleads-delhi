@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import { google } from "googleapis";
 import MenuBar from "../components/MenuBar/MenuBar";
 import Beds from "../components/Beds/Beds";
-// import GoogleSheetsProvider from "react-db-google-sheets";
+import { union } from "../utils/fetch";
 
 export default function bed(props) {
   return (

@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { google } from "googleapis";
 import MenuBar from "../components/MenuBar/MenuBar";
 import Beds from "../components/Beds/Beds";
+import { union } from "../utils/fetch";
 // import GoogleSheetsProvider from "react-db-google-sheets";
 
 export default function food(props) {

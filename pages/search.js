@@ -4,7 +4,6 @@ import { google } from "googleapis";
 import MenuBar from "../components/MenuBar/MenuBar";
 import Beds from "../components/Beds/Beds";
 import Search from "../components/Search/Search";
-// import GoogleSheetsProvider from "react-db-google-sheets";
 
 export default function search(props) {
   return (
