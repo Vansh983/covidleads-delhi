@@ -51,7 +51,7 @@ const useStyles = makeStyles({
 });
 
 function BedCard({ bed, category }) {
-  const [name, location, phoneNumber, lastVerified, timings, website] = bed;
+  const { Name, Location, PhoneNumber, LastVerified, timings, website } = bed;
   const classes = useStyles();
   const router = useRouter();
   const handleMsg = () => {
@@ -59,12 +59,12 @@ function BedCard({ bed, category }) {
       "Hello. I am looking for " +
       name +
       " in Delhi on an urgent basis. Please let me know if it is available with you. Thank you.";
-    let URL = "whatsapp://send?text=" + msg + "&phone=91" + phoneNumber;
+    let URL = "whatsapp://send?text=" + msg + "&phone=91" + PhoneNumber;
 
     router.push(URL);
   };
   const handleCall = () => {
-    let URL = "tel:" + phoneNumber;
+    let URL = "tel:" + PhoneNumber;
 
     router.push(URL);
   };
@@ -77,19 +77,19 @@ function BedCard({ bed, category }) {
       <CardContent>
         <h5 className={classes.title}>{category}</h5>
         <h2 className={classes.head}>
-          {name}
+          {Name}
           &nbsp;
         </h2>
         <Typography className={classes.pos} color="primary">
-          <DoneAllIcon /> Verified at {lastVerified}
+          <DoneAllIcon /> Verified at {LastVerified}
         </Typography>
-        <p className={classes.p}>{location}</p>
+        <p className={classes.p}>{Location}</p>
         <p style={{ color: "#007ef3", margin: 0 }}>{timings}</p>
         <p style={{ marginTop: 5, marginBottom: 0, color: "#007ef3" }}>
-          {phoneNumber}
+          {PhoneNumber}
         </p>
       </CardContent>
-      {phoneNumber && (
+      {PhoneNumber && (
         <CardActions>
           <Button
             onClick={handleCall}

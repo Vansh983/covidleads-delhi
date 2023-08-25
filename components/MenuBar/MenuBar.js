@@ -11,10 +11,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import ItemCard from "../Beds/BedCard";
 import { Button, Grid } from "@material-ui/core";
-import Cards from "../Cards/Cards";
-import Beds from "../Beds/Beds";
+
 import Link from "next/link";
 import routes from "../../data/routes";
 import BottomNav from "./BottomNav";
@@ -71,18 +69,18 @@ function MenuBar(props) {
     <div>
       <h2>
         <Link href="/">
-          <a style={{ margin: "20px 15px", color: "#007EFF" }}>
+          <span style={{ margin: "20px 15px", color: "#007EFF" }}>
             Covid Leads for Delhi
-          </a>
+          </span>
         </Link>
       </h2>
       <Divider />
       {routes.map((route, index) => (
         <Link href={route.route} style={{ cursor: "pointer" }}>
-          <a>
+          <span>
             <h3 style={{ margin: "20px 15px" }}>{route.name}</h3>
             <Divider />
-          </a>
+          </span>
         </Link>
       ))}
     </div>

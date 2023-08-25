@@ -4,6 +4,7 @@ import BedCard from "./BedCard";
 // import { googleApi } from "../../pages/api";
 
 function Beds({ beds, category }) {
+  console.log(beds);
   return (
     <div style={{ marginTop: "20px" }}>
       {beds.length ? (
